@@ -1,4 +1,4 @@
-package reservation;
+package reservation.domain;
 
 public class ReservationName {
     private final String value;

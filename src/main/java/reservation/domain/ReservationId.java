@@ -1,4 +1,4 @@
-package reservation;
+package reservation.domain;
 
 public class ReservationId {
     private final int value;

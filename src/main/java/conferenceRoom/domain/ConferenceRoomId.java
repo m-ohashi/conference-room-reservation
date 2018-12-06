@@ -1,4 +1,4 @@
-package conferenceRoom;
+package conferenceRoom.domain;
 
 public class ConferenceRoomId {
     private final int value;

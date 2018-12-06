@@ -1,4 +1,4 @@
-package conferenceRoom;
+package conferenceRoom.domain;
 
 public class ConferenceRoom {
     private final ConferenceRoomId conferenceRoomId;
@@ -8,4 +8,9 @@ public class ConferenceRoom {
         this.conferenceRoomId = conferenceRoomId;
         this.conferenceRoomName = conferenceRoomName;
     }
+
+    public ConferenceRoomName getConferenceRoomName() {
+        return conferenceRoomName;
+    }
+
 }

@@ -1,9 +1,10 @@
 package application;
 
-import conferenceRoom.ConferenceRoomId;
-import conferenceRoom.ConferenceRoomUseDateTime;
-import reservation.ConferenceRoomReservation;
-import reservation.ReservationName;
+import conferenceRoom.domain.ConferenceRoomId;
+import conferenceRoom.domain.ConferenceRoomUseDateTime;
+import reservation.domain.ConferenceRoomReservation;
+import reservation.domain.ReservationId;
+import reservation.domain.ReservationName;
 
 public class ConferenceRoomApplication {
     private final ConferenceRoomId conferenceRoomId;
@@ -19,7 +20,24 @@ public class ConferenceRoomApplication {
         this.conferenceRoomUseDateTime = conferenceRoomUseDateTime;
     }
 
-    public ConferenceRoomReservation createConferenceRoomReservation(){
-        return null;
+    public ConferenceRoomReservation createConferenceRoomReservation(ReservationId reservationId) {
+        return new ConferenceRoomReservation(
+                reservationId,
+                this.conferenceRoomId,
+                this.reservationName,
+                this.conferenceRoomUseDateTime
+        );
+    }
+
+    public ConferenceRoomId getConferenceRoomId() {
+        return conferenceRoomId;
+    }
+
+    public ConferenceRoomUseDateTime getConferenceRoomUseDateTime() {
+        return conferenceRoomUseDateTime;
+    }
+
+    public ReservationName getReservationName() {
+        return reservationName;
     }
 }

@@ -1,7 +1,7 @@
-package reservation;
+package reservation.domain;
 
-import conferenceRoom.ConferenceRoomId;
-import conferenceRoom.ConferenceRoomUseDateTime;
+import conferenceRoom.domain.ConferenceRoomId;
+import conferenceRoom.domain.ConferenceRoomUseDateTime;
 
 public class ConferenceRoomReservation {
     private final ReservationId reservationId;
@@ -19,7 +19,12 @@ public class ConferenceRoomReservation {
         this.conferenceRoomUseDateTime = conferenceRoomUseDateTime;
     }
 
-    public boolean isEmpty(ConferenceRoomUseDateTime conferenceRoomUseDateTime) {
-        return false;
+    public boolean isNotEmpty(ConferenceRoomUseDateTime conferenceRoomUseDateTime) {
+        return this.conferenceRoomUseDateTime.isDuplicate(conferenceRoomUseDateTime);
     }
+
+    public ConferenceRoomUseDateTime getConferenceRoomUseDateTime() {
+        return conferenceRoomUseDateTime;
+    }
+
 }
